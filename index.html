@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <title>Timer</title>
+  </head>
+  <body>
+    <script>
+let goal = 10;
+var count = 0;
+var countup = function(){
+  // Countdown from 10sec 
+  console.log(goal - count++);
+  var id = setTimeout(countup, 1000);
+  if(count > goal){
+    clearTimeout(id);
+  }
+}
+countup();
+    </script>
+  </body>
+</html>
