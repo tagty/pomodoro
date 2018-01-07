@@ -1,5 +1,7 @@
 # Pomodoro Timer JS
 ## Todo
-- Use munites 
+- Use 2 digit for sec
 - UI
+- Test
+- Select Work or Rest
 - Use other file

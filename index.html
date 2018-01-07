@@ -6,11 +6,14 @@
   </head>
   <body>
     <script>
-let goal = 10;
+let goal = 90;
 var count = 0;
 var countup = function(){
-  // Countdown from 10sec 
-  console.log(goal - count++);
+  var timeSecAll = goal - count++ 
+  var timeSec = timeSecAll % 60
+  var timeMin = (timeSecAll - timeSec) / 60
+  var timeMinSec = timeMin + ":" + timeSec
+  console.log(timeMinSec);
   var id = setTimeout(countup, 1000);
   if(count > goal){
     clearTimeout(id);
