@@ -1,7 +1,14 @@
 # Pomodoro Timer JS
 ## Todo
-- Use 2 digit for sec
-- UI
+- Indicate numbers
+- Start
+- Reset 
+- Rest
+- React
+- Nodejs
+- Todolist
+- Design
 - Test
-- Select Work or Rest
-- Use other file
+- ReactNative
+- Electron
+
