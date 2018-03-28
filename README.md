@@ -1,12 +1,12 @@
 # Pomodoro Timer JS
 ## Todo
-- Indicate numbers
-- Start
-- Reset 
 - Rest
+- Push button twice
+- Todolist
 - React
 - Nodejs
-- Todolist
+- Push nortification 
+- OKR
 - Design
 - Test
 - ReactNative

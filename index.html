@@ -3,29 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Timer</title>
-    <div id="timer"></div>
   </head>
   <body>
+    <div id="timer"></div>
+    <button onclick="start()">Start</button>
+    <button onclick="reset()">Reset</button>
     <script>
-var zeroPadding = function (num) { return ('00' + num).slice(-2) }
-let goal = 90
+let goal = 25 * 60 
 var count = 0
-var countup = function () {
+var formatTime = function () {
   var timeSecAll = goal - count++ 
   var timeSec = timeSecAll % 60
   var timeMin = (timeSecAll - timeSec) / 60
-  var timeMinSec = zeroPadding(timeMin) + ":" + zeroPadding(timeSec)
-
-  var label = document.createElement('label')
-  label.innerHTML = timeMinSec 
-  var timer = document.getElementById('timer')
-  while (timer.firstChild) { timer.removeChild(timer.firstChild) }
-  timer.appendChild(label)
-  
+  return zeroPadding(timeMin) + ":" + zeroPadding(timeSec)
+}
+var zeroPadding = function (num) { return ('00' + num).slice(-2) }
+var countup = function () {
+  var time = formatTime()
+  displayNumber(time)
   var id = setTimeout(countup, 1000)
   if (goal < count) { clearTimeout(id) }
 }
-countup()
+var displayNumber = function (time) {
+  var label = document.createElement('label')
+  label.innerHTML = time 
+  var timer = document.getElementById('timer')
+  while (timer.firstChild) { timer.removeChild(timer.firstChild) }
+  timer.appendChild(label)
+}
+var start = function () {
+  countup()
+}
+var reset = function () {
+  count = 0
+}
+displayNumber(formatTime())
     </script>
   </body>
 </html>
