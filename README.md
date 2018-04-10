@@ -1,14 +1,15 @@
 # Pomodoro Timer JS
 ## Todo
-- Rest
-- Push button twice
+- Test
+- Nortification 
+- github page
+- Design
 - Todolist
 - React
 - Nodejs
-- Push nortification 
 - OKR
-- Design
-- Test
 - ReactNative
 - Electron
+- Short/Long break
+- Auto pompdoro/break
 

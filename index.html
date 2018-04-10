@@ -7,35 +7,57 @@
   <body>
     <div id="timer"></div>
     <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
     <button onclick="reset()">Reset</button>
+    <button onclick="rest()">Rest</button>
+    <button onclick="pomodoro()">Pomodoro</button>
     <script>
-let goal = 25 * 60 
+var goal = 25 * 60 
 var count = 0
+var counting = false
+var timerId
+
 var formatTime = function () {
-  var timeSecAll = goal - count++ 
-  var timeSec = timeSecAll % 60
-  var timeMin = (timeSecAll - timeSec) / 60
+  timeSecAll = goal - count++ 
+  timeSec = timeSecAll % 60
+  timeMin = (timeSecAll - timeSec) / 60
   return zeroPadding(timeMin) + ":" + zeroPadding(timeSec)
 }
-var zeroPadding = function (num) { return ('00' + num).slice(-2) }
-var countup = function () {
-  var time = formatTime()
-  displayNumber(time)
-  var id = setTimeout(countup, 1000)
+var zeroPadding = function (num) { return ("00" + num).slice(-2) }
+function countup () {
+  displayNumber(formatTime())
+  timerId = setTimeout(function() { countup() }, 1000)
   if (goal < count) { clearTimeout(id) }
 }
 var displayNumber = function (time) {
-  var label = document.createElement('label')
+  label = document.createElement("label")
   label.innerHTML = time 
-  var timer = document.getElementById('timer')
+  timer = document.getElementById("timer")
   while (timer.firstChild) { timer.removeChild(timer.firstChild) }
   timer.appendChild(label)
 }
-var start = function () {
-  countup()
+function start () {
+  if (!counting) {
+    counting = true 
+    countup()
+  }
+}
+function stop () {
+  clearTimeout(timerId)
+  counting = false
 }
 var reset = function () {
   count = 0
+}
+var rest = function () {
+  goal = 5 * 60
+  count = 0
+  displayNumber(formatTime())
+}
+var pomodoro = function () {
+  goal = 25 * 60
+  count = 0
+  displayNumber(formatTime())
 }
 displayNumber(formatTime())
     </script>
