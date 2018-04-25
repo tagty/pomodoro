@@ -1,15 +1,28 @@
 # Pomodoro Timer JS
 ## Todo
+- Github page
+- Title timer
 - Test
-- Nortification 
-- github page
-- Design
+- Auto pompdoro/break
+- Count iteration
 - Todolist
+- OKR
+- Nortification 
+- Design
+- Short/Long break
+- ReactNative
 - React
 - Nodejs
-- OKR
-- ReactNative
 - Electron
-- Short/Long break
-- Auto pompdoro/break
 
+## Name
+- Productive Timer
+- Productivity Timer
+- Pomodoro
+- Pomo Timer
+- PTimer
+- Pomodoro Master
+- Pomodoro Tech
+- Pomodoro Method
+- PoMoDoRo
+- Pomodorist

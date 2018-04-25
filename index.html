@@ -9,8 +9,9 @@
     <button onclick="start()">Start</button>
     <button onclick="stop()">Stop</button>
     <button onclick="reset()">Reset</button>
-    <button onclick="rest()">Rest</button>
+    <br>
     <button onclick="pomodoro()">Pomodoro</button>
+    <button onclick="rest()">Rest</button>
     <script>
 var goal = 25 * 60 
 var count = 0
@@ -27,7 +28,7 @@ var zeroPadding = function (num) { return ("00" + num).slice(-2) }
 function countup () {
   displayNumber(formatTime())
   timerId = setTimeout(function() { countup() }, 1000)
-  if (goal < count) { clearTimeout(id) }
+  if (goal < count) { clearTimeout(timerId) }
 }
 var displayNumber = function (time) {
   label = document.createElement("label")
