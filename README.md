@@ -1,19 +1,22 @@
-# Pomodoro Timer JS
+# Pomodoro
+- [Pomodoro](https://tagty.github.io/pomodoro/)
+
 ## Todo
-- Github page
+- Alert
+- Nortification 
+- Todolist
 - Title timer
+- Material Design
 - Test
 - Auto pompdoro/break
 - Count iteration
-- Todolist
 - OKR
-- Nortification 
-- Design
 - Short/Long break
 - ReactNative
 - React
 - Nodejs
 - Electron
+- Logo
 
 ## Name
 - Productive Timer

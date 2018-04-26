@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Timer</title>
+    <style>
+* {
+  text-align: center;
+}
+#timer {
+  font-size: xx-large;
+}
+    </style>
   </head>
   <body>
     <div id="timer"></div>
@@ -28,7 +36,10 @@ var zeroPadding = function (num) { return ("00" + num).slice(-2) }
 function countup () {
   displayNumber(formatTime())
   timerId = setTimeout(function() { countup() }, 1000)
-  if (goal < count) { clearTimeout(timerId) }
+  if (goal < count) { 
+    clearTimeout(timerId) 
+    alert("Finish")
+  }
 }
 var displayNumber = function (time) {
   label = document.createElement("label")
@@ -49,6 +60,7 @@ function stop () {
 }
 var reset = function () {
   count = 0
+  displayNumber(formatTime())
 }
 var rest = function () {
   goal = 5 * 60
