@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Timer</title>
-    <style>
-* {
-  text-align: center;
-}
-#timer {
-  font-size: xx-large;
-}
-    </style>
-  </head>
-  <body>
-    <div id="timer"></div>
-    <button onclick="start()">Start</button>
-    <button onclick="stop()">Stop</button>
-    <button onclick="reset()">Reset</button>
-    <br>
-    <button onclick="pomodoro()">Pomodoro</button>
-    <button onclick="rest()">Rest</button>
-    <script>
-var goal = 25 * 60 
-var count = 0
-var counting = false
-var timerId
 
-var formatTime = function () {
-  timeSecAll = goal - count++ 
-  timeSec = timeSecAll % 60
-  timeMin = (timeSecAll - timeSec) / 60
-  return zeroPadding(timeMin) + ":" + zeroPadding(timeSec)
-}
-var zeroPadding = function (num) { return ("00" + num).slice(-2) }
-function countup () {
-  displayNumber(formatTime())
-  timerId = setTimeout(function() { countup() }, 1000)
-  if (goal < count) { 
-    clearTimeout(timerId) 
-    alert("Finish")
-  }
-}
-var displayNumber = function (time) {
-  label = document.createElement("label")
-  label.innerHTML = time 
-  timer = document.getElementById("timer")
-  while (timer.firstChild) { timer.removeChild(timer.firstChild) }
-  timer.appendChild(label)
-}
-function start () {
-  if (!counting) {
-    counting = true 
-    countup()
-  }
-}
-function stop () {
-  clearTimeout(timerId)
-  counting = false
-}
-var reset = function () {
-  count = 0
-  displayNumber(formatTime())
-}
-var rest = function () {
-  goal = 5 * 60
-  count = 0
-  displayNumber(formatTime())
-}
-var pomodoro = function () {
-  goal = 25 * 60
-  count = 0
-  displayNumber(formatTime())
-}
-displayNumber(formatTime())
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Pomodoro Timer</title>
+  <style>
+    * {
+      text-align: center;
+    }
+
+    #timer {
+      font-size: xx-large;
+    }
+  </style>
+  <link rel="icon" href="assets/image/favicon.png" type="image/png">
+</head>
+
+<body>
+  <div id="timer"></div>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+  <button onclick="reset()">Reset</button>
+  <br>
+  <button onclick="resetTimer('pomodoro')">Pomodoro</button>
+  <button onclick="resetTimer('rest')">Rest</button>
+  <script>
+    const pomodoroGoal = 25 * 60
+    const restGoal = 5 * 60
+    var goal = pomodoroGoal
+    var count = 0
+    var counting = false
+    var timerId
+
+    var formatTime = function () {
+      timeSecAll = goal - count++
+      timeSec = timeSecAll % 60
+      timeMin = (timeSecAll - timeSec) / 60
+      return zeroPadding(timeMin) + ":" + zeroPadding(timeSec)
+    }
+    var zeroPadding = function (num) { return ("00" + num).slice(-2) }
+    function countup() {
+      var time = formatTime()
+      displayNumber(time)
+      timerId = setTimeout(function () { countup() }, 1000)
+      if (goal < count) {
+        clearTimeout(timerId)
+        counting = false
+        alert("Finish!")
+      }
+    }
+    var displayNumber = function (time) {
+      label = document.createElement("label")
+      label.innerHTML = time
+      timer = document.getElementById("timer")
+      while (timer.firstChild) { timer.removeChild(timer.firstChild) }
+      timer.appendChild(label)
+      document.title = time
+    }
+    var changeFavicon = function (status) {
+      var icon = document.querySelector("link[rel='icon")
+      if (status == "running") {
+        icon.href = "assets/image/favicon_running.png"
+      } else if (status == "stop") {
+        icon.href = "assets/image/favicon.png"
+      }
+    }
+    function start() {
+      if (!counting) {
+        changeFavicon("running")
+        counting = true
+        countup()
+      }
+    }
+    function stop() {
+      changeFavicon("stop")
+      clearTimeout(timerId)
+      counting = false
+    }
+    var reset = function () {
+      changeFavicon("stop")
+      count = 0
+      displayNumber(formatTime())
+    }
+    var resetTimer = function (resetType) {
+      changeFavicon("stop")
+      if (resetType == "pomodoro") {
+        goal = pomodoroGoal
+      } else if (resetType == "rest") {
+        goal = restGoal
+      }
+      clearTimeout(timerId)
+      counting = false
+      count = 0
+      displayNumber(formatTime())
+    }
+    displayNumber(formatTime())
+  </script>
+</body>
+
 </html>

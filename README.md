@@ -1,31 +1,4 @@
 # Pomodoro
-- [Pomodoro](https://tagty.github.io/pomodoro/)
+- This system is hosted on [here](https://tagty.github.io/pomodoro/)
+- [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) improves your productivity.
 
-## Todo
-- Alert
-- Nortification 
-- Todolist
-- Title timer
-- Material Design
-- Test
-- Auto pompdoro/break
-- Count iteration
-- OKR
-- Short/Long break
-- ReactNative
-- React
-- Nodejs
-- Electron
-- Logo
-
-## Name
-- Productive Timer
-- Productivity Timer
-- Pomodoro
-- Pomo Timer
-- PTimer
-- Pomodoro Master
-- Pomodoro Tech
-- Pomodoro Method
-- PoMoDoRo
-- Pomodorist
