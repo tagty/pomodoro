@@ -1,0 +1,15 @@
+* {
+    text-align: center;
+  }
+  #timer {
+    font-size: xx-large;
+  }
+  .w500 {
+    width: 500px
+  }
+  .margin-small {
+    margin: 6px;
+  }
+  .margin-large {
+    margin: 24px;
+  }
