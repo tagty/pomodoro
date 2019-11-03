@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link href="assets/stylesheets/style.css" rel="stylesheet">
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
-  </head>
 
-  <body>
-    <div id="timer" class="margin-large"></div>
-    <div>
-      <button onclick="start()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Start</button>
-      <button onclick="stop()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Stop</button>
-      <button onclick="reset()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Reset</button><br>  
-    </div>
-    <div>
-      <button onclick="resetTimer('pomodoro')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Pomodoro</button>
-      <button onclick="resetTimer('rest')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Rest</button>
-    </div>
-    <div class="mdl-textfield mdl-js-textfield w500">
-      <textarea class="mdl-textfield__input" type="text" rows="25" id="todolist" ></textarea>
-      <label class="mdl-textfield__label" for="todolist">Todolist is ...</label>
-    </div>
-      <script type="text/javascript" src="assets/javascripts/timer.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link href="assets/stylesheets/style.css" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <div id="timer" class="margin-large"></div>
+  <div>
+    <button onclick="start()"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Start</button>
+    <button onclick="stop()"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Stop</button>
+    <button onclick="reset()"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Reset</button><br>
+  </div>
+  <div>
+    <button onclick="resetTimer('pomodoro')"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Pomodoro</button>
+    <button onclick="resetTimer('rest')"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect margin-small">Rest</button>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield w500">
+    <textarea class="mdl-textfield__input" type="text" rows="25" id="todolist"></textarea>
+    <label class="mdl-textfield__label" for="todolist">Todolist is ...</label>
+  </div>
+  <script type="text/javascript" src="assets/javascripts/timer.js"></script>
+</body>
+
 </html>
